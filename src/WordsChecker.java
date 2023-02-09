@@ -10,8 +10,20 @@ public class WordsChecker {
     }
 
     public boolean hasWord(String word) {
+        Set<String> words = getStrings();
+        return words.contains(word);
+
+    }
+
+    private Set<String> getStrings() {
+        Set<String> words = getStringSet();
+        return words;
+        
+    }
+
+    private Set<String> getStringSet() {
         String[] textSpliter = text.split("\\P{IsAlphabetic}+");
         Set<String> words = new HashSet<String>(Arrays.asList(textSpliter));
-        return words.contains(word);
+        return words;
     }
 }
